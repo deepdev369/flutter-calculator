@@ -2,9 +2,11 @@
 
 A new Flutter project.
 
-## Getting Started
+## Flutter Basic Calculator App
 
 This is a simple calculator application developed using the Flutter framework. The app provides basic arithmetic calculations and a user-friendly interface.
+
+
 
 ## Features
 
@@ -17,9 +19,5 @@ This is a simple calculator application developed using the Flutter framework. T
 
 ![Screenshot 1](screenshots/home.jpg)
 ![Screenshot 2](screenshots/history.jpg)
-
-# Flutter Basic Calculator App
-
-This is a simple calculator application developed using the Flutter framework. The app provides basic arithmetic calculations and a user-friendly interface.
 
 
