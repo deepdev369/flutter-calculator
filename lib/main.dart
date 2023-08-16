@@ -1,4 +1,5 @@
-import 'package:calculator/splash_ui.dart';
+import 'package:calculator/simple_ui.dart';
+
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
         
       ),
-      home:const SplashScreen(),
+      home:const simpleCalculator(),
       
       
     );

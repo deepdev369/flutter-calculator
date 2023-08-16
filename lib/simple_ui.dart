@@ -1,8 +1,13 @@
+
+import 'dart:io';
+
 import 'package:calculator/history.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'sharedPrefferenceHeelper.dart';
 
-String historyString = '';
+
+String? historyString = '';
 //String second = '';
 String result = '';
 String equation = "";
@@ -16,6 +21,10 @@ class simpleCalculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    shHelper.getData();
+    print(shHelper.history);
+    print("helllllllllllllllllloooooooooooooooooooooooooooooooooooooo");
+    
     return const Scaffold(
       body: Column(
         children: [
@@ -61,7 +70,16 @@ class _DisplayState extends State<Display> {
           result = '${exp.evaluate(EvaluationType.REAL, cm)}';
         } catch (e) {}  
         resultString = result;
+        
+        if(historyString == ""){
+          historyString = shHelper.history;
+        }
         historyString = "$historyString\n\n\n$equation$resultString";
+        ///////////////////
+        print(historyString);
+        //adding shared preference
+        shHelper.setData(historyString!);
+
       } else {
         resultString = resultString + buttonData;
       }
@@ -139,11 +157,19 @@ class _DisplayState extends State<Display> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
+                          if(historyString == ""){
+                            historyString = shHelper.history;
+                          }
+                          else{
+                            
+                          }
+                          
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    history(historyString: historyString)),
+                                builder: (context)  {
+                                    
+                                    return history(historyString: historyString);}),
                           );
                         },
                         style: ButtonStyle(
